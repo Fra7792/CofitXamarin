@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Admin.DownloadDocAdmin"
+             Title=" Download documenti">
+    <StackLayout Padding="5">
+
+        <Label x:Name="uid" IsVisible="false"/>
+        <ListView x:Name="DocList" HasUnevenRows="True" SeparatorColor="#A2186F">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem x:Name="btnDownload" Text="Download" Clicked="btnDownload_Clicked_1"  CommandParameter="{Binding .}" />
+                        </ViewCell.ContextActions>
+                        <StackLayout Orientation="Vertical" Padding="15">
+                            <Label Text="{Binding NomeFile,StringFormat='{0:F0}'}" FontSize="25" TextColor="Black"/>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Admin.Notifiche"
+             Title="Notifiche"
+             IconImageSource="notifiche.png">
+    <StackLayout Padding="5">
+ 
+        <ListView x:Name="NotificheList" HasUnevenRows="True" ItemTapped="NotificheList_ItemTapped" SeparatorColor="#A2186F">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                            <Label x:Name="email" Text="{Binding Email,StringFormat='{0:F0}'}" FontSize="20" FontAttributes="Bold" TextColor="{Binding ColoreTesto,StringFormat='{0:F0}'}"/>
+                            <Label Text="{Binding Data,StringFormat='Data inserimento: {0:F0}'}" FontSize="15" FontAttributes="Italic" TextColor="Black" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

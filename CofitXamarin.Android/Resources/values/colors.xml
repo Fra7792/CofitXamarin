@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launcher_background">#FFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+	<color name="viola">#4A3289</color>
+	<color name="prugna">#A2186F</color>
+	<color name="prugna2">#FF009C</color>
+	<color name="rosso1">#F62217</color>
+	<color name="rosso2">#E42217</color>
+	<color name="verde1">#41A317</color>
+	<color name="verde2">#4AA02C</color>
+	<color name="grigio">#D2D2D2</color>
+</resources>

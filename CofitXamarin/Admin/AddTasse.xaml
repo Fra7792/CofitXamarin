@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Admin.AddTasse"
+             Title="Inserisci F24">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="F24: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="12"/>
+
+            <Picker x:Name="pickerTassa" Title="F24 di riferimento" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand" FontSize="15" FontAttributes="Italic">
+                <Picker.Items>
+                    <x:String>IVA</x:String>
+                    <x:String>INPS</x:String>
+                    <x:String>INAIL</x:String>
+                    <x:String>CCIAA</x:String>
+                    <x:String>RITENUTE</x:String>
+                    <x:String>DIPENDENTI</x:String>
+                    <x:String>IMU-TASI</x:String>
+                    <x:String>RIFIUTI</x:String>
+                    <x:String>TASSE</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Anno di riferimento: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="12"/>
+
+            <Picker x:Name="pickerAnno" Title="Seleziona l'anno" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand" FontSize="15"/>
+
+            <Label Text="Periodo di riferimento: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="12"/>
+
+            <Picker x:Name="pickerPeriodo" Title="Seleziona il periodo" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand" FontSize="15">
+                <Picker.Items>
+                    <x:String>I Trimestre</x:String>
+                    <x:String>II Trimestre</x:String>
+                    <x:String>III Trimestre</x:String>
+                    <x:String>IV Trimestre</x:String>
+                    <x:String>Annuale</x:String>
+                    <x:String>Gennaio</x:String>
+                    <x:String>Febbraio</x:String>
+                    <x:String>Marzo</x:String>
+                    <x:String>Aprile</x:String>
+                    <x:String>Maggio</x:String>
+                    <x:String>Giugno</x:String>
+                    <x:String>Luglio</x:String>
+                    <x:String>Agosto</x:String>
+                    <x:String>Settembre</x:String>
+                    <x:String>Ottobre</x:String>
+                    <x:String>Novembre</x:String>
+                    <x:String>Dicembre</x:String>                
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Importo: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="12"/>
+            <Entry x:Name="importo" Placeholder="Importo" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand"  FontSize="15" Keyboard="Numeric"/>
+
+            <Label Text="Data di scadenza: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="12"/>
+            <DatePicker x:Name="dataScadenza"  MinimumDate="1,1,2017" MaximumDate="1,31,2099" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand" Format="dd/MM/yyyy"  FontSize="15"/>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Stato: " TextColor="#A2186F" HorizontalOptions="Start" Margin="16, 20" FontSize="12"/>
+                <Picker x:Name="pickerStato" Margin="-20,0,0,0" Title="Seleziona lo stato della tassa:" TextColor="Black" HorizontalOptions="FillAndExpand" FontSize="15">
+                    <Picker.Items>
+                        <x:String>Emesso</x:String>
+                        <x:String>Pagato</x:String>
+                        <x:String>Scaduto</x:String>
+                    </Picker.Items>
+                </Picker>
+
+
+            </StackLayout>
+            
+            <Button x:Name="btnAddTassa" Text="Inserisci" TextColor="White" BackgroundColor="#4A3289" Margin="16, 0, 16, 0" HorizontalOptions="FillAndExpand" Clicked="btnAddTassa_Clicked"/>
+            <Label x:Name="uid" IsVisible="false"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

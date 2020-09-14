@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="CofitXamarin.Admin.NavigationAdmin" NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Master>
+
+        <ContentPage Title="Menu"  BackgroundColor="#fff">
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Orientation="Vertical"  BackgroundColor="White">
+                    <StackLayout  Orientation="Vertical">
+                        <StackLayout  Orientation="Horizontal" BackgroundColor="#4A3289" HorizontalOptions="FillAndExpand" Padding="0">
+
+                            <Frame CornerRadius="100" 
+                                       HeightRequest="160"
+                                       WidthRequest="160"                                       
+                                       Padding="-10"
+                                       Margin="-20, 0"
+                                       HorizontalOptions="Start"
+                                       IsClippedToBounds="True"
+                                       BackgroundColor="Transparent">
+                                <controls:CircleImage x:Name="imgProfilo" Source="sfondocofit.png" BackgroundColor="Transparent"  
+                                                 VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </Frame>
+
+                            <Label Text="Amministratore" FontSize="Large"  
+                                    Margin="10,0,0,0"  HorizontalOptions="Start" VerticalOptions="Center" TextColor="White"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <ListView x:Name="navigationList" Margin="0" SeparatorVisibility="Default" 
+                                      VerticalOptions="Start" ItemTapped="Item_Tapped"  IsGroupingEnabled="True" GroupDisplayBinding="{Binding GroupName}" ItemsSource="{Binding MenuList}">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                                         VerticalOptions="Center">
+
+                                            <Image Source="{Binding Icon}"
+                                                            HorizontalOptions="Start"
+                                                    VerticalOptions="Center" Margin="15,0,5,2" 
+                                                               HeightRequest="25"
+                                                                               WidthRequest="25"/>
+                                            <Label Text="{Binding OptionMenu}" FontAttributes="Bold"
+                                                               FontSize="15" Margin="10,0,5,2"
+                                                       HorizontalOptions="Start"  VerticalOptions="Center"
+                                                               TextColor="#A2186F"/>
+
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+
+    <MasterDetailPage.Detail>
+
+        <ContentPage Padding="10">
+            <ContentPage.Content>
+                <StackLayout Margin="5, 30, 5, 5">
+                    <Label Text="Detail Page">
+
+
+                    </Label>
+
+                </StackLayout>
+
+            </ContentPage.Content>
+
+        </ContentPage>
+
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

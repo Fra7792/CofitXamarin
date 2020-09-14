@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Admin.MenuCliente"
+             x:Name="titolo">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label x:Name="uid" IsVisible="false"/>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="anagrafica.png" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Button x:Name="btnProfilo" Text="Visualizza Anagrafica" HorizontalOptions="FillAndExpand" Clicked="btnProfilo_Clicked" FontSize="Subtitle" Padding="20" Margin="-10,20,16,10" TextColor="White" BackgroundColor="#A2186F" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="visualizzaf24.png" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Button x:Name="btnVisualizzaTasse" Text="Visualizza F24" Clicked="btnVisualizzaTasse_Clicked" FontSize="Subtitle" Padding="20" Margin="-10,20,16,10" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#A2186F"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="addf24.png" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Button x:Name="btn_addTasse" Text="Inserisci F24" Clicked="btn_addTasse_Clicked" FontSize="Subtitle" Padding="20" Margin="-10,20,16,10" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#A2186F"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="document1.png" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Button x:Name="btnDownloadDoc" Text="Download documenti" Clicked="btnDownloadDoc_Clicked" FontSize="Subtitle" Padding="20" Margin="-10,20,16,10" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#A2186F"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="upload1.png" WidthRequest="40" HeightRequest="40" Margin="8"/>
+                <Button x:Name="btn_UploadDoc" Text="Inserisci documenti" Clicked="btn_UploadDoc_Clicked" FontSize="Subtitle" Padding="20" Margin="-10,20,16,10" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#A2186F" />
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

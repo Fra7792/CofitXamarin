@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.User.UploadDocumentsPage"
+             Title="Carica documento">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                    <Picker FontAttributes="Italic" TextColor="Black" x:Name="pickerUpload" FontSize="20" HorizontalOptions="FillAndExpand" Title="Seleziona il tipo di documento">
+                        <Picker.Items>
+                            <x:String>Fattura</x:String>
+                            <x:String>Avviso</x:String>
+                            <x:String>Cartella</x:String>
+                            <x:String>Dipendenti</x:String>
+                            <x:String>Varie</x:String>
+                        </Picker.Items>
+                        
+                    </Picker>
+                    <Image x:Name="imgChoosed" HeightRequest="250" ></Image>
+                    <ActivityIndicator x:Name="progressBar" IsRunning="False" Color="Red"/>
+                    <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Button x:Name="btnExplorerFile" WidthRequest="200" Text="Carica File" TextColor="White" Clicked="btnExplorerFile_Clicked" BackgroundColor="#A2186F" />
+                        <Button x:Name="btnCaptureCamera" WidthRequest="200" Text="Scatta foto" TextColor="White" Clicked="btnCaptureCamera_Clicked" BackgroundColor="#A2186F" />
+                    </StackLayout>
+                    <Button x:Name="btnUpload" WidthRequest="200" Text="Carica Foto" TextColor="White" Clicked="BtnUpload_Clicked" BackgroundColor="#A2186F" />
+                </StackLayout>
+                <ListView x:Name="lstFiles" Margin="20,10" SeparatorColor="#A2186F">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem x:Name="btnDelete" Text="Elimina" Clicked="btnDelete_Clicked"  CommandParameter="{Binding .}" />
+                                </ViewCell.ContextActions>
+                                <Label Text="{Binding NomeFile}" TextColor="Black" FontSize="20" VerticalTextAlignment="Center"></Label>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

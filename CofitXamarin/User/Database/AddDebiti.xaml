@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.AddDebiti"
+             Title="Aggiungi debito">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Tipo debito: " HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="15" TextColor="#A2186F"/>
+            <Picker Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand" FontSize="20" FontAttributes="Italic"  x:Name="spinner" Title="Seleziona il tipo" >
+                <Picker.Items>
+                    <x:String>Affitto</x:String>
+                    <x:String>Assicurazione</x:String>
+                    <x:String>Fattura fornitore</x:String>
+                    <x:String>Canone di Leasing</x:String>
+                    <x:String>Utenze</x:String>
+                    <x:String>Stipendi</x:String>
+                    <x:String>Finanziamento</x:String>
+                    <x:String>Mutuo</x:String>
+                    <x:String>Altri debiti</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Descrizione:" TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="15"/>
+            <Entry Placeholder="Descrizione" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand"  FontSize="20" x:Name="descrizione"/>
+
+            <Label Text="Importo:" TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="15"/>
+            <Entry Placeholder="Importo" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand"  FontSize="20" x:Name="importo" Keyboard="Numeric"/>
+
+            <Label Text="Data di scadenza: " TextColor="#A2186F" HorizontalOptions="StartAndExpand" Margin="16, 20" FontSize="15"/>
+            <DatePicker MinimumDate="2015, 1, 1" MaximumDate="2030, 1, 31" x:Name="data_scadenza" Format="dddd, dd/MM/yyyy" Margin="16, -20, 16, 0" HorizontalOptions="FillAndExpand"  FontSize="20"/>
+
+            <StackLayout Orientation="Horizontal" Margin="16, 20">
+
+                <Label Text="Da pagare:" FontAttributes="Bold" TextColor="#A2186F" FontSize="15" />
+                <CheckBox x:Name="da_pagare" IsChecked="True" Color="#4A3289"/>
+            </StackLayout>
+
+            <Button Text="Aggiungi" Clicked="SaveDebito" HorizontalOptions="FillAndExpand" Margin="20, 0, 20 , 0" Padding="20" 
+                    BackgroundColor="Maroon" TextColor="White" x:Name="saveBtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

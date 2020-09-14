@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Tasse"
+             Title="F24/Tasse"
+             BackgroundColor="LightGray">
+    
+    <StackLayout Padding="5">
+       
+        <ListView x:Name="TasseList" HasUnevenRows="True" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="40" Margin="5">
+                            <StackLayout Orientation="Vertical">
+                                <ImageButton  Source="update.png" Margin="0,0,0,-35" HorizontalOptions="End" HeightRequest="30" WidthRequest="30" Clicked="DisplayData" BackgroundColor="Transparent"/>
+                                <Label Text="{Binding Tassa,StringFormat='{0:F0}'}" FontSize="20" FontAttributes="Bold" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                
+                                <Label Text="{Binding Scadenza,StringFormat='{0:F0}'}" FontSize="15" TextColor="Black" />
+                                
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame CornerRadius="40" BorderColor="{Binding ColoreTesto,StringFormat='{0:F0}'}" Padding="5">
+                                        
+                                        <Label Text="{Binding Stato,StringFormat='{0:F0}'}" FontSize="15" HorizontalOptions="Start" TextColor="{Binding ColoreTesto,StringFormat='{0:F0}'}"/>
+                                        
+                                    </Frame>
+                                    <Label Text="{Binding Importo,StringFormat='{0:F0} €'}" FontSize="20" HorizontalOptions="EndAndExpand" TextColor="Black" />
+                                </StackLayout>
+                                
+
+                            </StackLayout>
+                        </Frame>
+
+    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

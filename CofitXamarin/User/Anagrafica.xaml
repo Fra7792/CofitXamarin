@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Anagrafica" Title="Inserisci Anagrafica">
+                
+    <ContentPage.Content>
+
+        <ScrollView VerticalOptions="Start">
+
+            <StackLayout Orientation="Vertical">
+
+                <Label Text="Tipo di società:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 10, 0, 0"/>
+                <Picker Title="Tipo di società:" Margin="10, 0, 10, 0" TextColor="Black" x:Name="pickerTipoCliente" FontSize="Medium" >
+                    <Picker.Items>
+                        <x:String>Azienda</x:String>
+                        <x:String>Società</x:String>
+                        <x:String>Professionista</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Denominazione:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="denominazione"  Placeholder="Denominazione" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Text"/>
+
+                <Label Text="Città:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="citta" Placeholder="Città" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Text"/>
+
+                <Label Text="Indirizzo:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="indirizzo" Placeholder="Indirizzo" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Text"/>
+
+                <Label Text="Numero di telefono:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="numTelefono" Placeholder="Numero di telefono" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Telephone"/>
+
+                <Label Text="Numero di cellulare:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="numCellulare" Placeholder="Numero di cellulare" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Telephone"/>
+
+                <Label Text="Partita IVA:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="iva" Placeholder="Partita IVA" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Numeric"/>
+
+                <Label Text="Codice Fiscale:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Entry x:Name="cf" Placeholder="Codice Fiscale" TextColor="Black" FontSize="Medium" Margin="10, 0, 10, 0" Keyboard="Text" />
+
+                <Label Text="Tipo di contabilità:" TextColor="#A2186F" FontSize="Subtitle" Margin="10, 0, 0, 0"/>
+                <Picker Title="Tipo di contabilità:" Margin="10, 0, 10, 0" TextColor="Black" x:Name="pickerContabilita" FontSize="Medium" >
+                    <Picker.Items>
+                        <x:String>Minimo</x:String>
+                        <x:String>Forfettario</x:String>
+                        <x:String>Semplificata</x:String>
+                        <x:String>Ordinaria</x:String>
+                        <x:String>Enti non commerciali</x:String>
+                        <x:String>Agricoltura</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button x:Name="btnInserisci" Clicked="btnInserisci_Clicked" Text="Inserisci" BackgroundColor="#A2186F" TextColor="White" Margin="10, 30, 10, 0"/>
+
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+  
+</ContentPage>

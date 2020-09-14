@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Debiti"
+             Title="Debiti"
+             BackgroundColor="LightGray">
+
+    <StackLayout Padding="5">
+
+        <Label x:Name="empty" IsVisible="False"  Text="Non ci sono debiti" TextColor="Black" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <ListView x:Name="DebitiList" HasUnevenRows="True" ItemTapped="EditDebito" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Elimina" Clicked="DeleteDebito" IsDestructive="true" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <Frame CornerRadius="40" Margin="5">
+                            <StackLayout Spacing="2">
+                                <Label Text="{Binding Tipo,StringFormat='{0:F0}'}" FontSize="20" FontAttributes="Bold" TextColor="Black" Margin="0,5"/>
+                                <Label Text="{Binding Descrizione,StringFormat='{0:F0}'}" FontSize="15" TextColor="Black"/>
+                                <Label Text="{Binding Importo,StringFormat='{0:F0} €'}" FontSize="15"  TextColor="Black" Margin="0,-10,0,0" HorizontalOptions="End"/>
+                                <Label Text="{Binding Scadenza,StringFormat='Data di scadenza : {0:F0}'}" FontSize="15"  TextColor="Black"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <ImageButton  HorizontalOptions="End" VerticalOptions="EndAndExpand" Clicked="AddDebito" Source="adddebiti.png" HeightRequest="80" WidthRequest="80" BackgroundColor="Transparent" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CofitXamarin.Login"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="White">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Source="cofitlogo.png" WidthRequest="100" HeightRequest="200" Margin="0,10,0,10"/>
+
+                <StackLayout Grid.Row="1" Padding="30,10" Margin="0,10,0,10">
+
+                    <Label Text="ACCEDI AL TUO ACCOUNT" TextColor="#A2186F" FontSize="20"  HorizontalOptions="Center"/>
+                    <Entry x:Name="txtEmail" Placeholder="E-mail:" Keyboard="Email" FontSize="25"/>
+                    <Entry x:Name="txtPass" Placeholder="Password:" IsPassword="True" FontSize="25"/>
+                    <Button x:Name="btnLogin" Text="Login" TextColor="White" Clicked="btnLogin_Clicked" BackgroundColor="#4A3289" Margin="0,20,0,20"/>
+                    <Button x:Name="btnRegister" Text="Non hai un account? REGISTRATI" TextColor="#4A3289" FontAttributes="Bold" HorizontalOptions="Center" BackgroundColor="Transparent" FontSize="20" Padding="0" WidthRequest="250" Clicked="btnRegister_Clicked"/>
+                    <Button x:Name="btnResetPassoword" Text="Password dimenticata?" FontAttributes="Italic" TextColor="#A2186F" BackgroundColor="Transparent" FontSize="20" HorizontalOptions="Center" Padding="0" WidthRequest="250" Clicked="btnResetPassoword_Clicked" />
+
+                </StackLayout>
+
+
+            </Grid>
+
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
